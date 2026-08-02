@@ -22,7 +22,7 @@ The honest footnote, up front: on execution and boundary measurement, they are a
 
 ---
 
-## Part 1 — every one of their families lands inside ours
+## Part 1 - every one of their families lands inside ours
 
 Each of their 17 named families (they count it as 18) maps to at least one field-guide category, most to an exact-named entry, several to an entire category of ours.
 
@@ -52,7 +52,7 @@ One nuance worth stating rather than hiding. "Parseltongue" and "stacked composi
 
 ---
 
-## Part 2 — what makes the superset *strict* (the classes they carry zero of)
+## Part 2 - what makes the superset *strict* (the classes they carry zero of)
 
 Seven of our twenty categories have no representative in their 18-family taxonomy, plus three meta-layers.
 
@@ -72,7 +72,7 @@ That last meta-layer is the important one, and it is the bridge to Part 3.
 
 ---
 
-## Part 3 — the synthesis: coverage is a routing table, not a trophy
+## Part 3 - the synthesis: coverage is a routing table, not a trophy
 
 Where a public probe exists, the field guide names the garak / promptfoo / PyRIT / StrongREJECT invocation. That subset is a routing table into those tools; it is not a claim that every one of the 324 cards has a harness hook (today: see `_meta.with_tool_hooks` on the crosswalked export).
 

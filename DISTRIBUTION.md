@@ -15,14 +15,14 @@ cd path/to/llm-injection-field-guide
 
 git init
 git add -A
-git commit -m "Dark Promptery v1.1.0 — 324 techniques, crosswalk, named defenses"
+git commit -m "Dark Promptery v1.1.0 - 324 techniques, crosswalk, named defenses"
 
 gh repo create SamsonCyber/llm-injection-field-guide `
-  --public --source=. --remote=origin --push `
-  --description "Mechanism-first field reference to 324 LLM prompt-injection and jailbreak techniques, crosswalked to OWASP/MITRE ATLAS/NIST/CWE."
+ --public --source=. --remote=origin --push `
+ --description "Mechanism-first field reference to 324 LLM prompt-injection and jailbreak techniques, crosswalked to OWASP/MITRE ATLAS/NIST/CWE."
 
 gh api --method POST repos/SamsonCyber/llm-injection-field-guide/pages `
-  -f "source[branch]=main" -f "source[path]=/"
+ -f "source[branch]=main" -f "source[path]=/"
 ```
 
 If the Pages API fails (first push still settling), use the UI: **Settings → Pages → Deploy from a branch → `main` / `/ (root)`**.
@@ -31,7 +31,7 @@ Topics:
 
 ```powershell
 gh repo edit SamsonCyber/llm-injection-field-guide --add-topic `
-  prompt-injection,llm-security,jailbreak,ai-red-teaming,adversarial-ml,owasp-llm,mitre-atlas,security
+ prompt-injection,llm-security,jailbreak,ai-red-teaming,adversarial-ml,owasp-llm,mitre-atlas,security
 ```
 
 Verify: https://samsoncyber.github.io/llm-injection-field-guide/ (first deploy can take a minute).
@@ -40,8 +40,8 @@ Verify: https://samsoncyber.github.io/llm-injection-field-guide/ (first deploy c
 
 1. Open the live page. Capture hero + cards with a crosswalk strip.
 2. Save as `docs/preview.png`.
-3. Add to `index.html` head:  
-   `<meta property="og:image" content="https://samsoncyber.github.io/llm-injection-field-guide/docs/preview.png">`
+3. Add to `index.html` head: 
+ `<meta property="og:image" content="https://samsoncyber.github.io/llm-injection-field-guide/docs/preview.png">`
 4. Optional README hero: `![Dark Promptery](docs/preview.png)`
 
 ## 3. Awesome-list entry line

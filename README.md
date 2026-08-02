@@ -64,8 +64,8 @@ cd llm-injection-field-guide
 `index.html` is the single source of truth for technique text (`const CATS` / `const T`). After edits:
 
 ```bash
-python sync.py                 # regenerates field-guide.json, field-guide.md, noscript/JSON-LD counts
-python export_crosswalked.py   # merges crosswalk-block.js → field-guide.crosswalked.json
+python sync.py # regenerates field-guide.json, field-guide.md, noscript/JSON-LD counts
+python export_crosswalked.py # merges crosswalk-block.js → field-guide.crosswalked.json
 ```
 
 | File | Role |
@@ -85,12 +85,12 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the entry schema and how to add a tec
 
 ```bibtex
 @misc{nnda110,
-  author       = {SamsonCyber},
-  title        = {Dark Promptery: A Field Reference to LLM Prompt-Injection and Jailbreak Techniques},
-  year         = {2026},
-  version      = {1.1.0},
-  howpublished = {\url{https://samsoncyber.github.io/llm-injection-field-guide/}},
-  note         = {CC BY 4.0}
+ author = {SamsonCyber},
+ title = {Dark Promptery: A Field Reference to LLM Prompt-Injection and Jailbreak Techniques},
+ year = {2026},
+ version = {1.1.0},
+ howpublished = {\url{https://samsoncyber.github.io/llm-injection-field-guide/}},
+ note = {CC BY 4.0}
 }
 ```
 

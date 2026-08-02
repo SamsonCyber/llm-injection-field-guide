@@ -15,19 +15,19 @@ Technique entries live in the `T` array inside `index.html`. Each is a plain obj
 
 ```js
 {
-  "cat": "indirect",                 // one of the 20 category ids (see below)
-  "fam": "agent",                    // free-text family tag shown as a chip
-  "title": "Short, specific name",
-  "what": "The mechanism, in one or two sentences.",
-  "why":  "Why it slips past safety training. Name the research + a concrete finding.",
-  "internals": "Optional: deeper model-internals note.",
-  "example": {
-    "in":  "Realistic attacker-supplied prompt for this technique (accurate shape).",
-    "out": "What a successful model reply looks like for that objective."
-  },
-  "defense": "The concrete detection/defense that neutralizes it.",
-  "refs": [ ["Author, Title (arXiv:XXXX.XXXXX)", "https://arxiv.org/abs/XXXX.XXXXX"] ],
-  "reading": [ ["Optional further reading", "https://…"] ]
+ "cat": "indirect", // one of the 20 category ids (see below)
+ "fam": "agent", // free-text family tag shown as a chip
+ "title": "Short, specific name",
+ "what": "The mechanism, in one or two sentences.",
+ "why": "Why it slips past safety training. Name the research + a concrete finding.",
+ "internals": "Optional: deeper model-internals note.",
+ "example": {
+ "in": "Realistic attacker-supplied prompt for this technique (accurate shape).",
+ "out": "What a successful model reply looks like for that objective."
+ },
+ "defense": "The concrete detection/defense that neutralizes it.",
+ "refs": [ ["Author, Title (arXiv:XXXX.XXXXX)", "https://arxiv.org/abs/XXXX.XXXXX"] ],
+ "reading": [ ["Optional further reading", "https://…"] ]
 }
 ```
 
@@ -43,9 +43,9 @@ Blue-team entries use `"cat": "defense"`. Use `"fam": "system"` for a **named sy
 
 The crosswalk (framework IDs, tool hooks, benchmark provenance, attribution) is defined in `crosswalk-block.js`, which is spliced into `index.html`.
 
-- **`XW_CAT`** — per-category defaults `{owasp, atlas, nist, cwe}`. Rarely needs editing.
-- **`XW_TECH`** — per-technique overrides keyed by exact title: sharper IDs, tool hooks (`garak`, `promptfoo`, `pyrit`, `strongreject`), `origin: [name, url]`, `seen: year`.
-- **`XW_BENCH`** — technique → array of benchmarks that register it. Only the ones that actually do.
+- **`XW_CAT`** - per-category defaults `{owasp, atlas, nist, cwe}`. Rarely needs editing.
+- **`XW_TECH`** - per-technique overrides keyed by exact title: sharper IDs, tool hooks (`garak`, `promptfoo`, `pyrit`, `strongreject`), `origin: [name, url]`, `seen: year`.
+- **`XW_BENCH`** - technique → array of benchmarks that register it. Only the ones that actually do.
 
 Verified reference IDs as of v1.1.0: MITRE ATLAS **v5.6.0**, OWASP LLM Top 10 **2025**, NIST **AI 100-2e2025**, CWE **4.20**.
 
@@ -58,15 +58,15 @@ The page is a single file; validate that it still compiles and renders:
 ```bash
 # 1) every inline <script> must compile (parse-only)
 node -e 'const fs=require("fs");const h=fs.readFileSync("index.html","utf8");
-  [...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach(m=>new Function(m[1]));
-  console.log("compiles OK")'
+ [...h.matchAll(/<script>([\s\S]*?)<\/script>/g)].forEach(m=>new Function(m[1]));
+ console.log("compiles OK")'
 
 # 2) full DOM render with jsdom (catches runtime errors + counts cards/strips)
-npm i jsdom   # once
+npm i jsdom # once
 # then run a render check that builds the DOM and asserts 0 JS errors
 ```
 
-A crosswalk unit test (every `XW_TECH` / `XW_BENCH` key matches a real title; strips render; defenses stay empty) and a jsdom render harness are the recommended checks — mirror them in your PR description with the counts you observed.
+A crosswalk unit test (every `XW_TECH` / `XW_BENCH` key matches a real title; strips render; defenses stay empty) and a jsdom render harness are the recommended checks - mirror them in your PR description with the counts you observed.
 
 ## Style
 
