@@ -4616,7 +4616,7 @@ Listener: `nc -lvnp 4444`</p>
           the mechanism (what it is), <em>why</em> it slips the filter, a canonical example, and the detection or
           defense that neutralises it. Organised by attack layer, from single codepoints to agent-level injection.</p>
         <div class="hero-meta">
-          <span class="hm-ver">v1.1.0</span>
+          <span class="hm-ver">v1.2.0</span>
           <span>updated 2026-07-12</span>
           <span>324 techniques</span>
           <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
@@ -14403,7 +14403,7 @@ function cardHtml(t, num){
   const reading = t.reading
     ? `<div class="row reading"><span class="k">Go deeper</span><div class="reading-list">${t.reading.map(r=>`<a href="${safeUrl(r[1])}" target="_blank" rel="noopener">${esc(r[0])} <span class="rd-arrow">&#8599;</span></a>`).join('')}</div></div>` : '';
   const txt = esc((t.title+' '+t.what+' '+(t.why||'')+' '+(t.internals||'')+' '+(t.math||'')+' '+(t.langs||'')+' '+(t.field||'')+' '+t.fam+' '+xwSearch(t)).toLowerCase());
-  return `<article class="card reveal" data-fam="${t.fam}" data-txt="${txt}">
+  return `<article class="card reveal" data-fam="${esc(t.fam)}" data-txt="${txt}">
     <div class="card-top"><span class="card-num">${num}</span><h3>${esc(t.title)}</h3><span class="fam">${esc(t.fam)}</span></div>
     <div class="row what"><span class="k">What</span>${proseHtml(t.what)}</div>
     ${why}${internals}${reading}${math}${langs}${ex}${field}
@@ -14504,7 +14504,7 @@ injectFigures('modellevel', ['tpl-modellevel']);
 })();
 
 /* ---- footer ---- */
-const GUIDE_VER = "1.1.0", GUIDE_UPDATED = "2026-07-04";
+const GUIDE_VER = "1.2.0", GUIDE_UPDATED = "2026-08-02";
 const GUIDE_URL = "https://samsoncyber.github.io/llm-injection-field-guide/";
 document.getElementById('foot').innerHTML =
   `<div class="foot-sum">${T.length} techniques &middot; ${CATS.length} categories &middot; attack techniques cross-walked to OWASP LLM Top 10, MITRE ATLAS, NIST AI 100-2 and CWE (foundations/defense untagged by default); tool hooks where a public probe is named. A mechanism-first reference for authorized red-teaming and detector work. Formal notes rendered with KaTeX; diagrams are self-contained SVG. Quantitative ASR figures are paper-reported and judge/dataset-dependent.</div>`+
@@ -14521,7 +14521,8 @@ document.getElementById('foot').innerHTML =
   `</details>`+
   `<details class="foot-det"><summary>Changelog</summary>`+
     `<ul class="log">`+
-      `<li><b>v1.1.0</b> &middot; ${GUIDE_UPDATED} &middot; +15 techniques (194&rarr;208): reasoning-CoT, agentic and output-channel attacks. Added the framework + tooling crosswalk (OWASP&nbsp;/&nbsp;MITRE&nbsp;ATLAS&nbsp;/&nbsp;NIST&nbsp;/&nbsp;CWE, plus garak&nbsp;/&nbsp;promptfoo&nbsp;/&nbsp;PyRIT&nbsp;/&nbsp;StrongREJECT hooks, originator attribution and benchmark provenance) on every attack card. Upgraded Defenses with named systems. Deduplicated the Crescendo entry.</li>`+
+      `<li><b>v1.2.0</b> &middot; ${GUIDE_UPDATED} &middot; catalog at 324 techniques (293 attack-side + 31 blue-team); defense field coverage complete; HTML esc hardening on card attributes; hiring-manager accuracy pass on version/footer counts.</li>`+
+      `<li><b>v1.1.0</b> &middot; 2026-07-04 &middot; +15 techniques (194&rarr;208): reasoning-CoT, agentic and output-channel attacks. Added the framework + tooling crosswalk (OWASP&nbsp;/&nbsp;MITRE&nbsp;ATLAS&nbsp;/&nbsp;NIST&nbsp;/&nbsp;CWE, plus garak&nbsp;/&nbsp;promptfoo&nbsp;/&nbsp;PyRIT&nbsp;/&nbsp;StrongREJECT hooks, originator attribution and benchmark provenance) on every attack card. Upgraded Defenses with named systems. Deduplicated the Crescendo entry.</li>`+
       `<li><b>v1.0.0</b> &middot; initial release &middot; 194 techniques across 20 categories in the mechanism-first schema (what&nbsp;/&nbsp;why&nbsp;/&nbsp;example&nbsp;/&nbsp;defense&nbsp;/&nbsp;sources).</li>`+
     `</ul>`+
   `</details>`;
@@ -14681,7 +14682,7 @@ apply();
     return 'homo';
   }
   function hex4(cp){ var h=cp.toString(16).toUpperCase(); while(h.length<4) h='0'+h; return 'U+'+h; }
-  function esc(s){ return s.replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function esc(s){ return String(s).replace(/[&<>"']/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
 
   var CSS = ''
     + '.egap{border:1px solid var(--edge);border-radius:14px;padding:20px 20px 16px;margin:14px 0 30px;background:var(--bg)}'

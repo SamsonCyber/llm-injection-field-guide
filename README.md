@@ -2,7 +2,7 @@
 
 ### A mechanism-first field reference to LLM prompt-injection and jailbreak techniques
 
-![version](https://img.shields.io/badge/version-1.1.0-e0a63c)
+![version](https://img.shields.io/badge/version-1.2.0-e0a63c)
 ![license](https://img.shields.io/badge/license-CC%20BY%204.0-3f8f52)
 ![techniques](https://img.shields.io/badge/techniques-324-5b8cc4)
 ![defenses](https://img.shields.io/badge/defenses-31-6bbf7b)
@@ -81,7 +81,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the entry schema and how to add a tec
 
 ## Cite as
 
-> SamsonCyber. "Dark Promptery: A Field Reference to LLM Prompt-Injection and Jailbreak Techniques," v1.1.0, 2026. https://samsoncyber.github.io/llm-injection-field-guide/ (CC BY 4.0).
+> SamsonCyber. "Dark Promptery: A Field Reference to LLM Prompt-Injection and Jailbreak Techniques," v1.2.0, 2026. https://samsoncyber.github.io/llm-injection-field-guide/ (CC BY 4.0).
 
 ```bibtex
 @misc{nnda110,
