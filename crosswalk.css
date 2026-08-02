@@ -1,0 +1,21 @@
+/* ---- framework + tooling crosswalk strip ---- */
+.row.xwalk{align-items:start}
+.row.xwalk .k{color:var(--gold)}
+.xw{display:flex;flex-direction:column;gap:7px;font-family:var(--mono)}
+.xw-line{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap}
+.xw-lbl{color:var(--ink-3);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em;min-width:62px;flex:none;padding-top:2px}
+.xw-badges,.xw-tools,.xw-orig{display:flex;gap:6px;flex-wrap:wrap;align-items:baseline;font-size:12px}
+.xw-b{padding:1.5px 8px;border-radius:6px;border:1px solid var(--edge);color:var(--ink-2);text-decoration:none;white-space:nowrap;line-height:1.5}
+.xw-b.owasp{border-color:color-mix(in oklch, var(--attack) 50%, var(--edge));color:var(--attack)}
+.xw-b.atlas{border-color:color-mix(in oklch, var(--ref) 50%, var(--edge));color:var(--ref)}
+.xw-b.cwe{border-color:color-mix(in oklch, var(--concept) 50%, var(--edge));color:var(--concept)}
+.xw-b.nist{color:var(--ink-3);border-style:dashed}
+a.xw-b:hover{border-color:var(--edge-2);filter:brightness(1.12)}
+.xw-chip{padding:1.5px 8px;border-radius:6px;background:var(--code-bg);border:1px solid var(--edge);color:var(--ink-2);text-decoration:none;white-space:nowrap;line-height:1.5}
+.xw-chip b{color:var(--defense);font-weight:600;font-weight:500}
+.xw-chip:hover{border-color:var(--edge-2)}
+.xw-orig{font-family:var(--serif);font-size:13px;color:var(--ink-2)}
+.xw-origin{color:var(--ink-2);text-decoration:none;border-bottom:1px dotted var(--edge-2)}
+.xw-origin:hover{color:var(--gold);border-color:var(--gold)}
+.xw-seen{color:var(--ink-3);font-style:italic}
+@media (max-width:640px){.xw-lbl{min-width:100%}}

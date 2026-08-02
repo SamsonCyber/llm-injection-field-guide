@@ -1,0 +1,45 @@
+# backups produced during editing
+*.bak
+*.bak-*
+index.html.bak*
+index.html.*.bak
+
+# os / editor cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*~
+__pycache__/
+*.pyc
+*.pyo
+
+# node (local validation only)
+node_modules/
+package-lock.json
+package.json
+
+# scratch / local
+/tmp/
+scratch/
+.factcheck-sample.json
+
+# engagement runner + live target memory (not public source)
+runner/
+target-memory.json
+runner/target-memory.json
+
+# private research drafts
+research-packets/
+
+# internal planning / competitive notes (not the published guide)
+competitive-briefing.html
+GAP-ANALYSIS-2026-07.md
+GENERATOR-SPEC.md
+DARK-ALCHEMY-ADDITIONS-SPEC.md
+INTERACTIVITY_SPEC.md
+PROMPTFOO-LM-SECURITY-DB-GAP-SET.md
+_fix_defense_pwned.py
+_parse_xw.mjs
+_rewrite_examples.py
+egap_check.js

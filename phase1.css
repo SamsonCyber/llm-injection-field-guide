@@ -1,0 +1,32 @@
+/* ---- Phase 1: version line, footer citation/changelog, benchmark chips ---- */
+.hero-meta{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;margin-top:20px;
+  font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+.hero-meta a{color:var(--ink-2);text-decoration:none;border-bottom:1px dotted var(--edge-2)}
+.hero-meta a:hover{color:var(--gold)}
+.hero-meta .hm-ver{color:var(--gold);border:1px solid color-mix(in oklch, var(--gold) 45%, var(--edge));
+  border-radius:6px;padding:2px 8px;font-weight:600;letter-spacing:.02em}
+
+#foot .foot-sum{max-width:80ch}
+#foot .foot-meta{display:flex;flex-wrap:wrap;gap:8px 16px;margin-top:16px;font-family:var(--mono);font-size:12.5px}
+#foot .fm{color:var(--ink-2);white-space:nowrap}
+#foot .fm-k{color:var(--ink-3);text-transform:uppercase;letter-spacing:.06em;font-size:10.5px;margin-right:5px}
+#foot .fm a{color:var(--ref);text-decoration:none}
+#foot .fm a:hover{border-bottom:1px solid var(--ref)}
+#foot .foot-det{margin-top:14px;border-top:1px solid var(--edge);padding-top:12px}
+#foot .foot-det summary{cursor:pointer;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;
+  text-transform:uppercase;color:var(--gold);width:fit-content}
+#foot .foot-det summary:hover{color:var(--gold-2)}
+#foot .foot-det[open] summary{margin-bottom:12px}
+#foot .cite{font-family:var(--serif);font-size:14px;color:var(--ink-2);max-width:82ch;line-height:1.55}
+#foot .bib{font-family:var(--mono);font-size:11.5px;background:var(--code-bg);border:1px solid var(--edge);
+  border-radius:8px;padding:12px 14px;margin:10px 0 0;overflow-x:auto;color:var(--ink-2);white-space:pre;line-height:1.5}
+#foot .log{margin:0;padding-left:18px;color:var(--ink-2);font-size:13.5px;max-width:84ch;line-height:1.55}
+#foot .log li{margin:7px 0}
+#foot .log b{color:var(--gold-2)}
+
+/* benchmark provenance chips in the crosswalk strip */
+.xw-bench{display:flex;gap:6px;flex-wrap:wrap;align-items:baseline;font-size:12px}
+.xw-bench-chip{font-family:var(--mono);font-size:12px;padding:1.5px 8px;border-radius:6px;
+  border:1px solid color-mix(in oklch, var(--live) 40%, var(--edge));color:var(--live);
+  text-decoration:none;white-space:nowrap;line-height:1.5}
+.xw-bench-chip:hover{border-color:var(--live);filter:brightness(1.1)}

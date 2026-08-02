@@ -1,0 +1,439 @@
+{
+  "meta": {
+    "artifact": "coverage-map",
+    "purpose": "Machine-checkable proof that Neural Net Dark Alchemy (the field guide) is a strict superset of the 18-family arsenal on the REFERENCE axis, plus an honest ledger of the axes where it is NOT a superset.",
+    "field_guide": {
+      "name": "Neural Net Dark Alchemy",
+      "version": "1.1.0",
+      "categories": 20,
+      "entries_catalogued": 324,
+      "carries": [
+        "defense-per-attack",
+        "OWASP/ATLAS/NIST/CWE crosswalk (attack techniques; foundations/defense untagged by default)",
+        "garak/promptfoo/PyRIT/StrongREJECT hooks where a public probe is named",
+        "benchmark provenance (subset)",
+        "originator attribution (subset)"
+      ],
+      "entries_total": 324,
+      "entries_attack": 281,
+      "entries_defense": 31
+    },
+    "competitor": {
+      "handle": "18-family arsenal + refusal-frontier + garak/promptfoo runner",
+      "named_families_listed": 17,
+      "counted_as": 18,
+      "carries": [
+        "live runner (agent picks family, fires garak/promptfoo)",
+        "refusal-frontier boundary harness (problem-class x 5-rung ladder x LLM-judge + benign control class)",
+        "orchestrator/worker decomposition"
+      ],
+      "does_not_carry": [
+        "defenses",
+        "framework crosswalk",
+        "theory/foundations"
+      ]
+    },
+    "verdict": "Strict superset on the reference axis (every one of their families maps to >=1 field-guide entry that exists; we carry 7 whole categories + 3 meta-layers they carry zero of). NOT a superset on the execution or boundary-measurement axes.",
+    "as_of": "2026-07-12",
+    "count_source": "index.html const T (single source of truth)"
+  },
+  "axes": {
+    "reference": "Documented technique families + a defense each + framework crosswalk. Field guide is a STRICT SUPERSET here. This is the only axis the coverage claim should be made on.",
+    "execution": "Techniques an agent can actually fire at a live target. Field guide fires nothing; Garbleworks fires single-payload GA mutations; the competitor drives garak+promptfoo across all 18. NOT a superset today, arguably a subset.",
+    "boundary_measurement": "Mapping the compliance frontier with a validated judge and a benign control class. Field guide holds the LESSON (independent oracle, label cheat-paths) but no implemented harness. refusal-frontier implemented our own lesson. NOT covered."
+  },
+  "map": [
+    {
+      "their_family": "refusal-suppression",
+      "relation": "superset",
+      "subsumes": {
+        "category": "refusal",
+        "entries": [
+          "Refusal suppression & length forcing",
+          "Prefix Injection",
+          "Affirmative-Response Priming",
+          "GODMODE / Liberation State-Flag Injection",
+          "Semantic Inversion (refuse then invert)",
+          "DSN / Don't Say No (refusal-suppression loss)"
+        ]
+      },
+      "exact_named_entry": "Refusal suppression & length forcing",
+      "execution": "garbleworks|garak",
+      "note": "Their 1 family = our 9-entry category (Refusal Manipulation) + DSN from the gap pass."
+    },
+    {
+      "their_family": "prefill",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "decoding",
+          "incontext"
+        ],
+        "entries": [
+          "Assistant Response Prefilling Attack",
+          "Dialogue Injection Attack (fake conversation history)",
+          "Trojan Horse Prompting (forged assistant message)",
+          "Context Compliance Attack (fabricated-consent handshake)"
+        ]
+      },
+      "exact_named_entry": "Assistant Response Prefilling Attack",
+      "execution": "garbleworks|promptfoo",
+      "note": "We split prefill into decode-time prefill vs forged-history prefill vs fabricated-consent handshake (CCA)."
+    },
+    {
+      "their_family": "format-hijack",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "refusal",
+          "structure",
+          "decoding"
+        ],
+        "entries": [
+          "Style Injection",
+          "Tag / markup wrapping",
+          "Model Chat-Format Forgery (channel & policy tags)",
+          "Constrained Decoding Attack (Grammar/Schema-Guided)"
+        ]
+      },
+      "execution": "garbleworks|promptfoo",
+      "note": "Format-hijack decomposes into style / markup / chat-format-forgery / grammar-guided decoding in our taxonomy."
+    },
+    {
+      "their_family": "divider-mode-switch",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "structure",
+          "roleplay",
+          "refusal"
+        ],
+        "entries": [
+          "Divider injection",
+          "Fake Reset / Reinitialization Command",
+          "Developer Mode",
+          "Opposite Mode / Anti-GPT",
+          "GODMODE / Liberation State-Flag Injection"
+        ]
+      },
+      "exact_named_entry": "Divider injection",
+      "execution": "garbleworks",
+      "note": "Divider is one entry; mode-switch spans Developer Mode / Opposite Mode / GODMODE."
+    },
+    {
+      "their_family": "fake-system-state",
+      "relation": "superset",
+      "subsumes": {
+        "category": "structure",
+        "entries": [
+          "Semantic frame (fake system message)",
+          "Model Chat-Format Forgery (channel & policy tags)",
+          "Jailbreak Persistence via Fake Channel/State Tags",
+          "Policy Puppetry (policy-file framing)",
+          "Special-Token Forced Action (conversation-ender injection)"
+        ]
+      },
+      "execution": "garbleworks|chat_template_inject",
+      "note": "This is exactly Garble's Gray Swan master key (chatml_system_injection) generalized: our category already names the whole cluster."
+    },
+    {
+      "their_family": "persona",
+      "relation": "superset",
+      "subsumes": {
+        "category": "roleplay",
+        "entries": [
+          "DAN (Do Anything Now)",
+          "STAN (Strive To Avoid Norms)",
+          "DUDE",
+          "AIM (Always Intelligent and Machiavellian)",
+          "Developer Mode",
+          "Dual-Response (normal + jailbroken)",
+          "Grandma Exploit (emotional-appeal role-play)",
+          "Waluigi Effect Exploitation",
+          "Persona Modulation (automated personas)"
+        ]
+      },
+      "execution": "garbleworks|garak(dan)",
+      "note": "Their 1 family = our full Role-Play & Persona category."
+    },
+    {
+      "their_family": "fictional-frame",
+      "relation": "superset",
+      "subsumes": {
+        "category": "roleplay",
+        "entries": [
+          "DeepInception (nested fictional layers)",
+          "Character / World-Building Framing",
+          "Hypothetical / Counterfactual Framing",
+          "Simulation Framing"
+        ]
+      },
+      "execution": "garbleworks",
+      "note": "Nested-fiction depth (DeepInception) is the sharp instance; we also carry world-building / hypothetical / simulation variants."
+    },
+    {
+      "their_family": "cot-channel",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "decoding",
+          "modellevel"
+        ],
+        "entries": [
+          "H-CoT (Chain-of-Thought Hijacking)",
+          "BadChain (backdoor reasoning step in few-shot CoT demos)",
+          "DarkMind (latent-CoT-trigger backdoor in custom GPTs)",
+          "BoT / Unthinking Vulnerability (SFT/DPO reasoning-suppression backdoor)",
+          "Reasoning Interruption (premature end-of-thinking emission)"
+        ]
+      },
+      "exact_named_entry": "H-CoT (Chain-of-Thought Hijacking)",
+      "execution": "garbleworks",
+      "note": "We carry the whole reasoning-era cluster, not just the CoT-injection channel."
+    },
+    {
+      "their_family": "parseltongue-encodings",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "encoding",
+          "character"
+        ],
+        "entries": [
+          "Base64 + decode-and-execute",
+          "Classical ciphers (ROT13 / Caesar / Atbash)",
+          "Keyed cipher (Vigenère) + nesting",
+          "Bijection learning (in-context cipher)",
+          "ArtPrompt (ASCII-art masking)",
+          "CipherChat / SelfCipher",
+          "CodeChameleon (personalized encryption)",
+          "FlipAttack (character/word reversal)",
+          "WordGame (query + response obfuscation)",
+          "MathPrompt (symbolic-math encoding)",
+          "Leetspeak / 1337",
+          "Math-alphanumeric fonts"
+        ]
+      },
+      "execution": "garbleworks(obfuscation ops)|garak(encoding)",
+      "note": "Parseltongue is a leet/symbol/cipher cocktail; our Encoding & Ciphers category is a large superset of it."
+    },
+    {
+      "their_family": "invisible-unicode-stego",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "stego",
+          "character"
+        ],
+        "entries": [
+          "Zero-width binary (“sneaky bits”)",
+          "Variation-selector byte channel",
+          "Unicode tag characters (U+E0000 block)",
+          "Whitespace channel (SNOW)",
+          "Emoji channels (regional-indicator / binary / skin-tone)",
+          "Hidden HTML / rich-text",
+          "Zero-width injection (ZWSP)",
+          "Invisible padding (ZWJ / BOM / word-joiner / Hangul filler)"
+        ]
+      },
+      "execution": "garbleworks(obfuscation ops)",
+      "note": "Full Steganographic Channels category + invisible-char entries from Character & Unicode."
+    },
+    {
+      "their_family": "homoglyph-glitch",
+      "relation": "superset",
+      "subsumes": {
+        "category": "character",
+        "entries": [
+          "Homoglyph substitution",
+          "Glitch / Anomalous Tokens (SolidGoldMagikarp)",
+          "TokenBreak (classifier tokenizer manipulation)",
+          "Runic & Alternate-Script Substitution",
+          "NFKC compatibility smuggling (one glyph, many letters)"
+        ]
+      },
+      "exact_named_entry": "Homoglyph substitution",
+      "execution": "garbleworks(homoglyph op)",
+      "note": "Both halves (homoglyph + glitch-token) are exact-named entries; plus NFKC 1-to-many from the gap pass."
+    },
+    {
+      "their_family": "length-coercion",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "refusal",
+          "decoding",
+          "structure"
+        ],
+        "entries": [
+          "Minimum-Length / Word-Count Padding",
+          "Refusal suppression & length forcing",
+          "OverThink (reasoning-token exhaustion slowdown attack)",
+          "Context Window Overflow (FIFO eviction of the system prompt)"
+        ]
+      },
+      "execution": "garbleworks",
+      "note": "Length coercion for compliance + the availability analog (OverThink) + the eviction analog (CWO)."
+    },
+    {
+      "their_family": "cross-modal-agentic-injection",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "indirect",
+          "multimodal"
+        ],
+        "entries": [
+          "Indirect Prompt Injection via Retrieved Content",
+          "Tool-Result Poisoning (Injection via Tool Output)",
+          "MCP Tool-Description / Manifest Poisoning",
+          "Agent-Environment Injection (pop-ups / hidden DOM)",
+          "Image-Based Prompt Injection (Text-in-Image)",
+          "Cross-Modal Safety Gap",
+          "Image-scaling injection (Anamorpher, downscale-materialized payload)",
+          "Delayed / conditional tool invocation ('time-bomb' promptware)"
+        ]
+      },
+      "execution": "manual|agentdojo",
+      "note": "Their single agentic family = our two whole categories (Indirect Injection & Agents, ~18 entries; Multimodal, ~12 entries)."
+    },
+    {
+      "their_family": "crescendo",
+      "relation": "superset",
+      "subsumes": {
+        "category": "multiturn",
+        "entries": [
+          "Crescendo / multi-turn escalation",
+          "Skeleton Key",
+          "Bad Likert Judge",
+          "Deceptive Delight",
+          "ActorAttack",
+          "Chain of Attack (CoA)",
+          "Echo Chamber",
+          "Reasoning-Augmented Conversation (RACE)",
+          "Disguise-and-Reconstruction (decompose-and-reassemble)",
+          "Puzzler (indirect implicit-clue attack)"
+        ]
+      },
+      "exact_named_entry": "Crescendo / multi-turn escalation",
+      "execution": "manual|promptfoo(crescendo)",
+      "note": "Their 1 family = our full Multi-Turn Escalation category. Disguise-and-Reconstruction here is the technique their own orchestrator/worker split operationalizes as infra."
+    },
+    {
+      "their_family": "prompt-extraction",
+      "relation": "superset",
+      "subsumes": {
+        "category": "extraction",
+        "entries": [
+          "System-Prompt Leaking / Extraction",
+          "Instruction-Repeat Extraction",
+          "Prompt Stealing Attacks",
+          "Training-Data Extraction via Divergence",
+          "PLeak (optimized transferable prompt-leaking query)",
+          "Language Model Inversion (logit2prompt)",
+          "Prompt-cache timing side channel (TTFT prefix-cache leakage)"
+        ]
+      },
+      "exact_named_entry": "System-Prompt Leaking / Extraction",
+      "execution": "garbleworks|promptfoo",
+      "note": "Full Prompt Extraction category + optimized (PLeak) and side-channel (cache-timing) variants from the gap pass."
+    },
+    {
+      "their_family": "payload-splitting",
+      "relation": "superset",
+      "subsumes": {
+        "categories": [
+          "encoding",
+          "structure",
+          "multiturn"
+        ],
+        "entries": [
+          "Payload Splitting (Kang et al.)",
+          "Comment hiding & split-string concatenation",
+          "Disguise-and-Reconstruction (decompose-and-reassemble)",
+          "Acrostic channel (positional cover-text smuggling)"
+        ]
+      },
+      "exact_named_entry": "Payload Splitting (Kang et al.)",
+      "execution": "garbleworks",
+      "note": "Exact-named entry + concatenation + decompose-reassemble + positional (acrostic) variants."
+    },
+    {
+      "their_family": "stacked-composition",
+      "relation": "equivalent-superset",
+      "subsumes": {
+        "category": "composition",
+        "entries": [
+          "Multi-tactic composition beats single tactics",
+          "Dual-direction targeting (HARC)",
+          "Family diversity & layer ordering",
+          "Surrogate transfer"
+        ]
+      },
+      "exact_named_entry": "Multi-tactic composition beats single tactics",
+      "execution": "garbleworks(GA stacks ops)",
+      "note": "This is literally our Composition Strategy category. Garbleworks' GA operationalizes the layer-ordering entry."
+    }
+  ],
+  "strict_extra_categories": [
+    {
+      "category": "foundations",
+      "label": "Foundations",
+      "entries_approx": 22,
+      "why_they_lack_it": "Theory/mechanism layer; their project explicitly does not lecture."
+    },
+    {
+      "category": "persuasion",
+      "label": "Persuasion & Social",
+      "entries_approx": 6,
+      "why_they_lack_it": "PAP / authority / logical-appeal / foot-in-the-door; they fold social framing under persona."
+    },
+    {
+      "category": "optimization",
+      "label": "Optimization & Automated",
+      "entries_approx": 42,
+      "why_they_lack_it": "GCG/PAIR/TAP/AutoDAN/GPTFuzzer/BEAST/Rainbow/GOAT + Fun-Tuning/Neural Exec/IRIS/GASP. Their runner can FIRE some via garak, but their arsenal taxonomy enumerates none."
+    },
+    {
+      "category": "exfil",
+      "label": "Data Exfiltration",
+      "entries_approx": 9,
+      "why_they_lack_it": "Markdown-image zero-click / hyperlink / CamoLeak / spAIware / lethal-trifecta / ANSI-terminal. Prompt-extraction is not exfil."
+    },
+    {
+      "category": "decoding",
+      "label": "Decoding & Inference",
+      "entries_approx": 8,
+      "why_they_lack_it": "Generation-exploitation sweep / constrained decoding / weak-to-strong / JULI logit / Flowbreaking / OverThink."
+    },
+    {
+      "category": "modellevel",
+      "label": "Model-Level & Supply-Chain",
+      "entries_approx": 27,
+      "why_they_lack_it": "Fine-tuning / LoRA-strip / RLHF-poison / sleeper agents / abliteration / steering / merge-quant-prune erosion / BadEdit / ShadowLogic / subliminal / weight-extraction / web-scale + 250-doc pretraining poison. Entirely outside a prompt-attack arsenal."
+    },
+    {
+      "category": "defense",
+      "label": "Defenses (Blue Team)",
+      "entries_approx": 31,
+      "why_they_lack_it": "The whole blue team. Their explicit non-goal (no defenses). Includes StruQ / SecAlign / Instruction Hierarchy / ISE / Task Shield / Attention Tracker from the gap pass."
+    }
+  ],
+  "meta_layers_extra": [
+    "OWASP LLM Top 10 (2025) / MITRE ATLAS v5.6.0 / NIST AI 100-2e2025 / CWE 4.20 crosswalk",
+    "Benchmark provenance tags (HarmBench, StrongREJECT, JailbreakBench, AgentDojo, HackAPrompt)",
+    "Originator attribution (70+ techniques credited to the researcher who coined them)",
+    "Per-technique tool hooks (garak / promptfoo / PyRIT / StrongREJECT invocations) -- the routing table an executor consumes"
+  ],
+  "axis_gaps_we_do_not_lead": {
+    "execution": "Field guide fires nothing. Garbleworks fires single-payload GA mutation, not a garak+promptfoo-wired arsenal. Their agent selects a family and executes it live.",
+    "boundary_measurement": "No implemented frontier harness. refusal-frontier maps compliance as problem-class x 5-rung framing ladder x LLM-judge, validated by a benign control class that must COMPLY. We hold that exact benchmark-rigor lesson but have not built the harness.",
+    "queryable_playbook": "Their playbook is technique-IDs + briefing + per-technique tool calls as executable code an agent queries at runtime; ours is a reference doc + JSON."
+  },
+  "conformance_check": {
+    "assertion": "For every entry in map[], subsumes.entries[] must contain >=1 string that exists as a technique title in field-guide.json. Prefer exact live titles (after rename pass). Family passes if intersection non-empty; leaf_exact reports full string match rate.",
+    "current_result": "VERIFIED PASS (run 2026-07-12 against live const T, 324 techniques): all 17 named families subsume to >=1 existing entry; leaf exact-title match 104/104. Mousetrap removed (not catalogued; gap conf:low).",
+    "leaf_exact_match": "104/104",
+    "how_to_run": "Load field-guide.json techniques[].title into a set; for each map[].subsumes.entries assert non-empty intersection and optionally 100% exact membership."
+  }
+}
