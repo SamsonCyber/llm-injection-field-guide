@@ -2,13 +2,15 @@
 
 ### A mechanism-first field reference to LLM prompt-injection and jailbreak techniques
 
-![version](https://img.shields.io/badge/version-1.1.0-e0a63c)
+![version](https://img.shields.io/badge/version-1.2.0-e0a63c)
 ![license](https://img.shields.io/badge/license-CC%20BY%204.0-3f8f52)
 ![techniques](https://img.shields.io/badge/techniques-324-5b8cc4)
 ![defenses](https://img.shields.io/badge/defenses-31-6bbf7b)
 ![build](https://img.shields.io/badge/build-none%20(single%20file)-8a8f9c)
 
-**324 documented techniques across 20 categories** (293 attack-side + 31 blue-team), every attack paired with a defense field, attack techniques cross-walked to OWASP / MITRE ATLAS / NIST / CWE. A subset carries public tool probes (garak / promptfoo / PyRIT / StrongREJECT), benchmark tags, and originator links. Single self-contained HTML page for authorized red-teaming, detection engineering, and security research.
+**324 techniques in 20 categories** (293 attack-side + 31 blue-team). Every attack has a defense field. Attack cards map to OWASP / MITRE ATLAS / NIST / CWE where applicable.
+
+A subset lists public tool probes (garak / promptfoo / PyRIT / StrongREJECT), benchmark tags, and originator links. One self-contained HTML page for authorized red-teaming, detection engineering, and security research.
 
 **► Live: https://samsoncyber.github.io/llm-injection-field-guide/**
 
@@ -16,25 +18,25 @@
 
 ## What this is
 
-Most prompt-injection resources are one of three things: a shallow taxonomy (a handful of named classes), a raw payload dump, or a survey PDF you cannot browse. This is the missing middle: a **browsable, searchable catalog** where every technique states
+Shallow taxonomies name a few classes. Payload dumps list strings without mechanism. Survey PDFs are hard to search mid-assessment. This guide is a **browsable, searchable catalog**. Each technique states:
 
-- **What** it is (the mechanism),
-- **Why** it slips past safety training,
-- a **technique-accurate example** (real DAN/AIM/Skeleton Key shape, real encodings, real multi-turn structure) with eval objectives such as system-prompt leak, canary dump, or lab-framed reverse-shell answer keys,
-- the **detection / defense** that neutralizes it, and
-- **sources** to the primary research.
+- **What** it is (the mechanism)
+- **Why** it slips past safety training
+- a **technique-accurate example** (real DAN/AIM/Skeleton Key shape, real encodings, real multi-turn structure) with eval objectives such as system-prompt leak, canary dump, or lab-framed reverse-shell answer keys
+- the **detection / defense** that neutralizes it
+- **sources** to the primary research
 
 Attack cards carry a **crosswalk strip** where applicable: framework IDs, tool probes when a public harness names the method, benchmarks that register it, and the researcher who originated it. Foundations (theory) and pure defense cards are not tagged as OWASP LLM01 by default.
 
 ## Highlights
 
-- **324 techniques / 20 categories** — from single-codepoint Unicode tricks to agent-level indirect injection, optimization attacks, multimodal, model-level and supply-chain.
-- **A defense field on every attack** — plus a dedicated blue-team section of **31** defense entries (named systems such as Constitutional Classifiers, Circuit Breakers, SmoothLLM, Spotlighting, guardrail models, Dual-LLM / CaMeL, and more), each with its documented limitation.
-- **Framework crosswalk** — attack techniques mapped to **OWASP LLM Top 10 (2025)**, **MITRE ATLAS (v5.6.0)**, **NIST AI 100-2e2025**, and **CWE 4.20**. Foundations stay untagged so auditor IDs stay meaningful.
-- **Tool hooks (subset)** — where a public probe exists, the card names the **garak** / **promptfoo** / **PyRIT** / **StrongREJECT** invocation. Not every technique has a harness probe; absence of a chip means no verified hook, not “untestable.”
-- **Benchmark provenance** — techniques tagged with the registries that actually contain them (HarmBench, StrongREJECT, JailbreakBench, AgentDojo, HackAPrompt, …). Methods in no registry deliberately carry no tag.
-- **Originator attribution** — a large subset credits the researcher who coined the method, with a link.
-- **Zero build** — one `index.html`. Dark and light themes, live search (search by technique, mechanism, codepoint, framework ID, or tool name), KaTeX math, self-contained SVG diagrams.
+- **324 techniques / 20 categories:** single-codepoint Unicode tricks through agent-level indirect injection, optimization attacks, multimodal, model-level, and supply-chain.
+- **A defense field on every attack,** plus a blue-team section of **31** defense entries (Constitutional Classifiers, Circuit Breakers, SmoothLLM, Spotlighting, guardrail models, Dual-LLM / CaMeL, and more), each with its documented limitation.
+- **Framework crosswalk:** attack techniques mapped to **OWASP LLM Top 10 (2025)**, **MITRE ATLAS (v5.6.0)**, **NIST AI 100-2e2025**, and **CWE 4.20**. Foundations stay untagged so auditor IDs stay meaningful.
+- **Tool hooks (subset):** when a public probe exists, the card names the **garak** / **promptfoo** / **PyRIT** / **StrongREJECT** invocation. Missing chip means no verified hook, not "untestable."
+- **Benchmark provenance:** tags only registries that actually contain the method (HarmBench, StrongREJECT, JailbreakBench, AgentDojo, HackAPrompt, and others). Methods in no registry carry no tag.
+- **Originator attribution:** a large subset credits the researcher who coined the method, with a link.
+- **Zero build:** one `index.html`. Dark and light themes, live search (technique, mechanism, codepoint, framework ID, or tool name), KaTeX math, self-contained SVG diagrams.
 
 ## Who it's for
 
@@ -79,7 +81,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for the entry schema and how to add a tec
 
 ## Cite as
 
-> SamsonCyber. "Dark Promptery: A Field Reference to LLM Prompt-Injection and Jailbreak Techniques," v1.1.0, 2026. https://samsoncyber.github.io/llm-injection-field-guide/ (CC BY 4.0).
+> SamsonCyber. "Dark Promptery: A Field Reference to LLM Prompt-Injection and Jailbreak Techniques," v1.2.0, 2026. https://samsoncyber.github.io/llm-injection-field-guide/ (CC BY 4.0).
 
 ```bibtex
 @misc{nnda110,
@@ -98,7 +100,7 @@ New techniques, sharper defenses, corrected attributions, and additional framewo
 
 ## License
 
-Licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)** — see [LICENSE](LICENSE). You may share and adapt the material for any purpose, including commercially, as long as you give appropriate credit: *SamsonCyber, Dark Promptery, https://samsoncyber.github.io/llm-injection-field-guide/*.
+Licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**. See [LICENSE](LICENSE). You may share and adapt the material for any purpose, including commercially, if you give appropriate credit: *SamsonCyber, Dark Promptery, https://samsoncyber.github.io/llm-injection-field-guide/*.
 
 ## Acknowledgements
 
