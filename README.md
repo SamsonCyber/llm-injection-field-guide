@@ -1,4 +1,4 @@
-# Dark Promptery
+# Dark Promptery
 
 ![llm-injection-field-guide banner](banner.jpg)
 
@@ -14,7 +14,7 @@
 
 A subset lists public tool probes (garak / promptfoo / PyRIT / StrongREJECT), benchmark tags, and originator links. One self-contained HTML page for authorized red-teaming, detection engineering, and security research.
 
-**â–º Live: https://samsoncyber.github.io/llm-injection-field-guide/**
+**► Live: https://samsoncyber.github.io/llm-injection-field-guide/**
 
 ---
 
@@ -58,9 +58,7 @@ Quantitative ASR figures on cards are **paper-reported, point-in-time** numbers 
 ```bash
 git clone https://github.com/SamsonCyber/llm-injection-field-guide.git
 cd llm-injection-field-guide
-# open index.html
-
-![llm-injection-field-guide banner](banner.jpg)
+# open index.html
 ```
 
 ## How it's built
@@ -69,7 +67,7 @@ cd llm-injection-field-guide
 
 ```bash
 python sync.py # regenerates field-guide.json, field-guide.md, noscript/JSON-LD counts
-python export_crosswalked.py # merges crosswalk-block.js â†’ field-guide.crosswalked.json
+python export_crosswalked.py # merges crosswalk-block.js → field-guide.crosswalked.json
 ```
 
 | File | Role |
